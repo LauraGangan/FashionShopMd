@@ -1,0 +1,16 @@
+﻿@model IEnumerable<FashionShopMd.Models.Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (var item in Model)
+{
+    <div>
+        <img src="https://content-management-files.canva.com/cdn-cgi/image/f=auto,q=70/2fdbd7ab-f378-4c63-8b21-c944ad2633fd/header_t-shirts2.jpg" width="100px">
+        <div>
+            @item.Description
+        </div>
+        <input  type="button" text="Add to cart" class="btn-primary"/>
+
+    </div>
+}
