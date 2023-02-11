@@ -19,10 +19,10 @@ namespace FashionShopMd.Controllers
 		}
 		public async Task<IActionResult> IndexAsync()
 		{
-			var products = await _context.Product.ToListAsync();
-			if (products.Count == 0)
+			var products = _context.Product.ToArray();
+			if (products.Length == 0)
 			{
-				return View();
+				return View(new List<Product>());
 			}
 			else
 			{
