@@ -17,10 +17,18 @@ namespace FashionShopMd.Controllers
 			_context = context;
 				
 		}
-		public IActionResult Index()
+		public async Task<IActionResult> IndexAsync()
 		{
-            return View( _context.Product.ToListAsync());
-        }
+			var products = await _context.Product.ToListAsync();
+			if (products.Count == 0)
+			{
+				return View();
+			}
+			else
+			{
+				return View(await _context.Product.ToListAsync());
+			}
+		}
 
 		public IActionResult Privacy()
 		{
