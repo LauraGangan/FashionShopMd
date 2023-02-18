@@ -7,11 +7,15 @@
 @foreach (var item in Model)
 {
     <div class="col-md-3">
-        <img src="@item.Image" width="100">
-        <div>
-            @item.Description - @item.Cost
-        </div>
-        <input  type="button" class="btn btn-primary" value="Add to cart">
+        <form action="/Home/AddToCart?productid=@item.Id" method="post">
+            <img src="@item.Image" width="100">
+            <div>
+                @item.Description - @item.Cost
+            </div>
+@*            <input type="text" value="@item.Id" name="productid" id="productid"/>*@
+            qty: <input type="text" value="1" name="qty" id="qty" style="width:40px"/>
+            <input  type="submit" class="btn btn-primary" value="Add to cart"/>
+        </form>
     </div>
 }
 </div>
