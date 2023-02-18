@@ -35,6 +35,11 @@ namespace FashionShopMd.Controllers
 			return View();
 		}
 
+		public void AddToCart(int productId, int qty)
+        {
+			var id = productId;
+        }
+
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{
